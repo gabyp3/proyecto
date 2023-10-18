@@ -7,6 +7,8 @@
         <title>2023-FunkoShop</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
@@ -73,10 +75,11 @@
                     <img src="multimedia/harry-potter/snape-patronus-1.webp" alt="Figura coleccionable Funko del Patronus de Snape en la película de Harry Potter">
                 </picture>
             </section>
-            <section class="slider container">
+            <section class="slider container glide">
                 <h2 class="slider__title">Últimos lanzamientos</h2>
+        <div class="glide__track" data-glide-el="track">
             <ul class="slider__items">
-                <li class="slider__item">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -93,7 +96,7 @@
                         </a>
                     </article>
                 </li>
-                <li class="slider__item">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -110,7 +113,7 @@
                         </a>
                     </article>
                 </li>
-                <li class="slider__item">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -128,6 +131,11 @@
                     </article>
                 </li>
             </ul>
+        </div>         
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button>
+          </div>
             </section>
 
         </main>
@@ -151,6 +159,22 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-        <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script>
+            new Glide('.glide', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 3,
+                gap: 30,
+                breakpoint: {
+                    991: {
+                        perView: 2
+                    },
+                    768: {
+                        perView: 1
+                    }
+                }
+            }).mount();
+        </script>
     </body>
 </html>
