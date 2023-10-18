@@ -5,9 +5,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>ITEM</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
         <link rel="stylesheet" href="../css/index.css">
     </head>
     <body>
@@ -36,11 +38,33 @@
                 </ul>
             </nav>
         </header> <!--FINAL HEADER-->
-        <main class="main-container">
-            <section class="slider container">
+        <main class="container">
+            <section class="item">
+                <picture class="item__img card-item__cover">
+                    <img class="card-item__img--front" src="../multimedia/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko de star-wars">
+                    <img class="card-item__img--back" src="../multimedia/star-wars/baby-yoda-box.webp" alt="Figura coleccionable Funko de star-wars en caja">
+                </picture>
+                <article class="item__info">
+                    <p class="item__licence">STAR WARS</p>
+                    <h3 class="item__name">BABY YODA BLUEBALL</h3>
+                    <p class="item__description">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
+                    <p class="item__price">$ 1799,99.-</p>
+                    <form  action="#" method="POST" enctype="application/x-www-form-urlencoded">
+                        <div class="item__cart">
+                            <button id="subtract" class="item__quantity" type="button">-</button>
+                            <input id="quantity" class="item__input" type="text" name="quantity" placeholder="0">
+                            <button id="add" class="item__quantity" type="button">+</button>
+                            <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito de compras</button>
+                        </div>
+                    </form>
+                    <p class="item__promo"><a href="">Ver métodos de pago</a> - 3 CUOTAS SIN INTERÉS</p>
+                </article>
+            </section>
+            <section class="slider container glide">
                 <h2 class="slider__title">Productos relacionados</h2>
-            <ul class="slider__items">
-                <li class="slider__item">
+            <div class="glide__track" data-glide-el="track">   
+              <ul class="slider__items">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -57,7 +81,7 @@
                         </a>
                     </article>
                 </li>
-                <li class="slider__item">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -74,7 +98,7 @@
                         </a>
                     </article>
                 </li>
-                <li class="slider__item">
+                <li class="slider__item glide__slide">
                     <article class="card__item">
                         <a class="card-item__link" href="">
                             <picture class="card-item__cover">
@@ -91,8 +115,13 @@
                         </a>
                     </article>
                 </li>
-            </ul>
-            </section>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button>
+            </div> 
+         </section>
 
         </main>
 
@@ -115,6 +144,23 @@
 
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-        <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <script>
+            new Glide('.glide', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 3,
+                gap: 30,
+                breakpoint: {
+                    991: {
+                        perView: 2
+                    },
+                    768: {
+                        perView: 1
+                    }
+                }
+            }).mount();
+        </script>
+        <script src="../js/item.js"></script>
     </body>
 </html>
