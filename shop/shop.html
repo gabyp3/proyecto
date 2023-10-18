@@ -37,53 +37,59 @@
             </nav>
         </header> <!--FINAL HEADER-->
 
-        <main class="main-contenedor">
-            <section class="buscador">
-                <form action=""  method="get">
-                    <h4>BUSCAR</h4>
-                    <input class="box1" type="text" value="item o categoria">
-                    <h4>ORDENAR POR</h4>
-                    <select name="" id="" class="box2">
-                        <option value="Mayor o menor">Mayor o menor</option>
-                        <option value=""></option>
+        <main id="shop">
+            <aside class="shop__filters filters">
+                <div class="filters__search">
+                    <label class="filters__title" for="search">BUSCAR</label>
+                    <input type="text" name="search" id="search" placeholder="item o categoría">                    
+                </div>
+                <div class="filters__order">
+                    <label class="filters__title" for="orderby">ORDENAR POR</label>
+                    <select name="orderby" id="orderby">
+                        <option value="az">A-Z</option>
+                        <option value="za">Z-A</option>
+                        <option value="desc">Mayor precio</option>
+                        <option value="asc">Menor precio</option>
                     </select>
-                    <h4>PRECIO</h4>
-                    <h4>MIN</h4>
-                        <input class="box2" type="text" value="0">
-                    </label>
-                   <h4>- MAX</h4>
-                        <input class="box2" type="text" value="0">
-                    </label>
-                    <h2>FILTRAR</h2>
-                    <input class="box4" type="checkbox" name="filtrar" id="filtrar" value="nuevos">
-                    <label class="box4" for="">NUEVOS</label>
-                    <input class="box4" type="checkbox" name="filtrar" id="filtrar" value="ofertas">
-                    <label class="box4" for="">OFERTAS</label>
-                    <input class="box4" type="checkbox" name="filtrar" id="filtrar" value="edicion especial">
-                    <label class="box4" for="">EDICIÓN ESPECIAL</label>
-                    <input class="box4" type="checkbox" name="filtrar" id="filtrar" value="favoritos">
-                    <label class="box4" for="">FAVORITOS</label>
-                </form>
-               <!-- <h2>FILTRAR</h2>
-                <form action="" method="get">
-                    <input type="checkbox" name="filtrar" id="filtrar" value="nuevos">
-                    <label for="">NUEVOS</label>
-                    <input type="checkbox" name="filtrar" id="filtrar" value="ofertas">
-                    <label for="">OFERTAS</label>
-                    <input type="checkbox" name="filtrar" id="filtrar" value="edicion especial">
-                    <label for="">EDICIÓN ESPECIAL</label>
-                    <input type="checkbox" name="filtrar" id="filtrar" value="favoritos">
-                    <label for="">FAVORITOS</label>
-                </form> -->
-            </section>
-            <section class="colecion container">
+                </div>
+                <div class="filters__price">
+                    <span class="filters__title">PRECIO</span>
+                    <div>
+                        <label for="min">MIN</label>
+                        <input type="text" name="min" id="min" placeholder="0">
+                        <label for="max">- MAX</label>
+                        <input type="text" name="max" id="max" placeholder="0">
+                    </div>
+                </div>
+                <div class="filters__checks">
+                    <span class="filters__title" for="filter">FILTRAR</span>
+                    <div>
+                        <input type="checkbox" name="filter" id="news" value="news">
+                        <label for="">NUEVOS</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filter" id="offers" value="offers">
+                        <label for="">OFERTAS</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filter" id="specials" value="specials">
+                        <label for="">EDICIÓN ESPECIAL</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="filter" id="favs" value="favs">
+                        <label for="">FAVORITOS</label>
+                    </div>
+                </div>
+            </aside>
+            <section class="shop__content">
                 <ul class="slider__items">
                     <li class="slider__item">
                         <article class="card__item">
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--front" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--back" src="../multimedia/star-wars/trooper-box.webp" alt="Figura coleccionable Funko de STORMTROOPER en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">STAR WARS</p>
@@ -99,7 +105,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--front" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--back" src="../multimedia/pokemon/pidgeotto-box.webp" alt="Figura coleccionable Funko de Pidgetto en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">POKEMON</p>
@@ -115,7 +122,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--front" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--back" src="../multimedia/harry-potter/luna-box.webp" alt="Figura coleccionable Funko de Luna Lovegood en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">HARRY POTTER</p>
@@ -133,7 +141,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--front" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--back" src="../multimedia/star-wars/trooper-box.webp" alt="Figura coleccionable Funko de STORMTROOPER en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">STAR WARS</p>
@@ -149,7 +158,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--front" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--back" src="../multimedia/pokemon/pidgeotto-box.webp" alt="Figura coleccionable Funko de Pidgetto en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">POKEMON</p>
@@ -165,7 +175,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--front" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--back" src="../multimedia/harry-potter/luna-box.webp" alt="Figura coleccionable Funko de Luna Lovegood en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">HARRY POTTER</p>
@@ -183,7 +194,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--front" src="../multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de STORMTROOPER">
+                                    <img class="card-item__img--back" src="../multimedia/star-wars/trooper-box.webp" alt="Figura coleccionable Funko de STORMTROOPER en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">STAR WARS</p>
@@ -199,7 +211,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--front" src="../multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgetto">
+                                    <img class="card-item__img--back" src="../multimedia/pokemon/pidgeotto-box.webp" alt="Figura coleccionable Funko de Pidgetto en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">POKEMON</p>
@@ -215,7 +228,8 @@
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
-                                    <img class="card-item" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--front" src="../multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+                                    <img class="card-item__img--back" src="../multimedia/harry-potter/luna-box.webp" alt="Figura coleccionable Funko de Luna Lovegood en caja">
                                 </picture>
                                 <div class="card-item__content">
                                     <p class="card-item__licence">HARRY POTTER</p>
@@ -227,6 +241,15 @@
                         </article>
                     </li>
                 </ul>
+                <div class="pagination">
+                    <a class="pagination__link" href="#" ><</a>
+                    <a class="pagination__link pagination__link--selected" href="#" >1</a>
+                    <a class="pagination__link" href="#" >2</a>
+                    <a class="pagination__link" href="#" >3</a>
+                    <a class="pagination__link" href="#" >4</a>
+                    <a class="pagination__link" href="#" >5</a>
+                    <a class="pagination__link" href="#" >></a>
+                </div>
 
             </section>
         </main>
